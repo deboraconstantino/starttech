@@ -1,0 +1,33 @@
+<div ngClass="center" style="margin-top: 1%">
+  <button mat-stroked-button style="margin: 0 auto;" (click)="goToForm()">+ Novo</button>
+</div>
+
+@if (categories$ | async; as categories) {
+  <div ngClass="center" style="margin-top: 1%; width: 100%;">
+
+    <mat-form-field style="width: 80%; margin: 0 auto;">
+      <mat-label>Pesquisar</mat-label>
+      <input matInput placeholder="Pesquisar" #input>
+    </mat-form-field>
+
+    <div style="margin: 0 auto; width: 80%">
+      <table mat-table [dataSource]="categories.items" class="mat-elevation-z2">
+
+        @for (column of columns; track column[0]; let index = $index) {
+          <ng-container matColumnDef="{{column}}">
+            <th mat-header-cell *matHeaderCellDef> {{ this.getColumnTitle(column) }} </th>
+            <td mat-cell *matCellDef="let element"> {{ this.getColumnData(column, element) }} </td>
+          </ng-container>
+        }
+
+        <tr mat-header-row *matHeaderRowDef="columns"></tr>
+        <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+      </table>
+    </div>
+
+    <button mat-stroked-button style="width: 50%; margin: 0 auto; margin-top: 1%">Carregar mais</button>
+  </div>
+}
+@else {
+  SEM DADOS PARA APRESENTAR
+}

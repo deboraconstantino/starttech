@@ -1,0 +1,32 @@
+{
+  "tasks": {
+    "items": [
+      { "id": 1, "title": "Minha tarefa 1", "category": "Categoria 1", "status": 0 },
+      { "id": 2, "title": "Minha tarefa 2", "category": "Categoria 2", "status": 0 },
+      { "id": 3, "title": "Minha tarefa 3", "category": "Categoria 3", "status": 0 },
+      { "id": 4, "title": "Minha tarefa 4", "category": "Categoria 4", "status": 0 },
+      { "id": 5, "title": "Minha tarefa 5", "category": "Categoria 5", "status": 0 },
+      { "id": 6, "title": "Minha tarefa 6", "category": "Categoria 6", "status": 0 },
+      { "id": 7, "title": "Minha tarefa 7", "category": "Categoria 7", "status": 0 },
+      { "id": 8, "title": "Minha tarefa 8", "category": "Categoria 8", "status": 0 },
+      { "id": 9, "title": "Minha tarefa 9", "category": "Categoria 9", "status": 0 },
+      { "id": 10, "title": "Minha tarefa 10", "category": "Categoria 10", "status": 0 }
+    ],
+    "hasNext": false
+  },
+  "categories": {
+    "items": [
+      { "id": 1, "name": "Saúde" },
+      { "id": 2, "name": "Trabalho" },
+      { "id": 3, "name": "Estudos" },
+      { "id": 4, "name": "Financeiro" },
+      { "id": 5, "name": "Outros" }
+    ],
+    "hasNext": false
+  },
+  "status": [
+    { "id": 0, "description": "Não iniciada" },
+    { "id": 1, "description": "Em andamento" },
+    { "id": 2, "description": "Finalizada" }
+  ]
+}

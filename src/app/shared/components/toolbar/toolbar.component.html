@@ -1,0 +1,10 @@
+<mat-toolbar>
+  <mat-toolbar-row style="justify-content: center;">
+    <span style="justify-content: center;">{{titulo}}</span>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row style="justify-content: center;">
+    <button mat-stroked-button (click)="goToHome()" routerLinkActive="router-link-active" style="margin-right: 1%">Home</button>
+    <button mat-stroked-button (click)="goToCategories()">Categorias</button>
+  </mat-toolbar-row>
+</mat-toolbar>
