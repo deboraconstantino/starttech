@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { TasksService } from '../../shared/services/tasks/services/tasks.service';
 import { Router } from '@angular/router';
 import { PoPageDynamicTableActions } from '@po-ui/ng-templates';
+import { TasksService } from '../../shared/services/tasks/services/tasks.service';
 
 @Component({
   selector: 'app-tasks',
@@ -10,9 +9,6 @@ import { PoPageDynamicTableActions } from '@po-ui/ng-templates';
   styleUrls: ['./tasks.component.css']
 })
 export class TasksComponent implements OnInit {
-  tituloBotao: string = 'Meu botão alterado';
-  tasks$!: Observable<any>;
-  columns: Array<string> = ['id', 'title', 'category', 'status'];
   readonly fields: Array<any> = [
     { property: 'id', key: true, visible: true, label: 'Código' },
     { property: 'title', label: 'Título' },
@@ -22,18 +18,18 @@ export class TasksComponent implements OnInit {
   ];
 
   readonly actions: PoPageDynamicTableActions = {
-    new: '/documentation/po-page-dynamic-edit',
+    new: '/tasks-form',
     remove: true,
-    removeAll: true
+    edit: '/tasks-form/:id'
   };
 
   constructor(
-    private tasksService: TasksService,
-    private router: Router
+    private router: Router,
+    private tasksService: TasksService
   ) { }
 
   ngOnInit() {
-    this.tasks$ = this.tasksService.get();
+    this.tasksService.getById(1).subscribe({next: (res: any) => console.log("aqui", res)})
   }
 
   getColumnTitle(columnName: string): string {

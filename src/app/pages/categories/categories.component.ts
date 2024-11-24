@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CategoriesService } from '../../shared/services/categories/services/categories.service';
 import { Router } from '@angular/router';
+import { PoPageDynamicTableActions } from '@po-ui/ng-templates';
 
 @Component({
   selector: 'app-categories',
@@ -9,9 +10,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
-  categories$!: Observable<any>;
-  columns: Array<string> = ['id', 'name'];
   titulo: string = 'meu titulo';
+  readonly fields: Array<any> = [
+    { property: 'id', key: true, label: 'Código' },
+    { property: 'name', label: 'Título' }
+  ];
+
+  readonly actions: PoPageDynamicTableActions = {
+    new: '/categories/categories-form',
+    remove: true,
+    edit: '/categories/categories-form/:id'
+  };
 
   constructor(
     private categoriesService: CategoriesService,
@@ -19,7 +28,6 @@ export class CategoriesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.categories$ = this.categoriesService.get();
   }
 
   goToForm(): void {

@@ -4,7 +4,8 @@ import { CategoriesFormComponent } from './categories-form/categories-form.compo
 
 const routes: Routes = [
   { path: '', component: CategoriesComponent },
-  { path: 'categories-form', component: CategoriesFormComponent }
+  { path: 'categories-form', component: CategoriesFormComponent },
+  { path: 'categories-form/:id', component: CategoriesFormComponent }
 ];
 
 export const CategoriesRoutes = RouterModule.forChild(routes);

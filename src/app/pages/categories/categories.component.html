@@ -1,4 +1,11 @@
-<div ngClass="center" style="margin-top: 1%">
+<po-page-dynamic-table
+  p-title="Categorias"
+  p-service-api="http://localhost:3000/categories"
+  [p-fields]="fields"
+  [p-actions]="actions">
+</po-page-dynamic-table>
+
+<!-- <div ngClass="center" style="margin-top: 1%">
   <button mat-stroked-button style="margin: 0 auto;" (click)="goToForm()">+ Novo</button>
 </div>
 
@@ -32,4 +39,4 @@
 }
 @else {
   SEM DADOS PARA APRESENTAR
-}
+} -->

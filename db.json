@@ -24,9 +24,12 @@
     ],
     "hasNext": false
   },
-  "status": [
-    { "id": 0, "description": "Não iniciada" },
-    { "id": 1, "description": "Em andamento" },
-    { "id": 2, "description": "Finalizada" }
-  ]
+  "status": {
+    "items": [
+      { "id": 1, "description": "Não iniciada" },
+      { "id": 2, "description": "Em andamento" },
+      { "id": 3, "description": "Finalizada" }
+    ],
+    "hasNext": false
+  }
 }

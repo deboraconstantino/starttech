@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,4 +15,9 @@ export class CategoriesService {
     return this.http.get('http://localhost:3000/categories');
   }
 
+  getById(id: number): Observable<any> {
+    return this.get().pipe(
+      map((category: any) => category.items.filter((category: any) => category.id === id))
+    );
+  }
 }
