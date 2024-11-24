@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TasksService } from '../../shared/services/tasks/services/tasks.service';
 import { Router } from '@angular/router';
+import { PoPageDynamicTableActions } from '@po-ui/ng-templates';
 
 @Component({
   selector: 'app-tasks',
@@ -9,9 +10,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./tasks.component.css']
 })
 export class TasksComponent implements OnInit {
-
+  tituloBotao: string = 'Meu botão alterado';
   tasks$!: Observable<any>;
   columns: Array<string> = ['id', 'title', 'category', 'status'];
+  readonly fields: Array<any> = [
+    { property: 'id', key: true, visible: true, label: 'Código' },
+    { property: 'title', label: 'Título' },
+    { property: 'category', label: 'Categoria' },
+    { property: 'status', label: 'Status' },
+    { property: 'dia', label: 'Dia da semana' }
+  ];
+
+  readonly actions: PoPageDynamicTableActions = {
+    new: '/documentation/po-page-dynamic-edit',
+    remove: true,
+    removeAll: true
+  };
 
   constructor(
     private tasksService: TasksService,
@@ -54,5 +68,9 @@ export class TasksComponent implements OnInit {
 
   goToForm(): void {
     this.router.navigate(['/tasks-form']);
+  }
+
+  minhaFuncao(): void {
+    alert('cliquei no botão');
   }
 }

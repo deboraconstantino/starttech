@@ -2,6 +2,8 @@
   <button mat-stroked-button style="margin: 0 auto;" (click)="goToForm()">+ Novo</button>
 </div>
 
+{{titulo}}
+
 @if (categories$ | async; as categories) {
   <div ngClass="center" style="margin-top: 1%; width: 100%;">
 

@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class CategoriesComponent implements OnInit {
   categories$!: Observable<any>;
   columns: Array<string> = ['id', 'name'];
+  titulo: string = 'meu titulo';
 
   constructor(
     private categoriesService: CategoriesService,

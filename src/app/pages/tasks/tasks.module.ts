@@ -7,6 +7,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { ToolbarModule } from '../../shared/components/toolbar/toolbar.module';
 import {MatButtonModule} from '@angular/material/button';
 import { TasksRoutes } from './tasks.routing';
+import { PoModule } from '@po-ui/ng-components';
+import { PoTemplatesModule } from '@po-ui/ng-templates';
 
 @NgModule({
   imports: [
@@ -16,7 +18,9 @@ import { TasksRoutes } from './tasks.routing';
     MatTableModule,
     ToolbarModule,
     MatButtonModule,
-    TasksRoutes
+    TasksRoutes,
+    PoModule,
+    PoTemplatesModule
   ],
   declarations: [TasksComponent]
 })

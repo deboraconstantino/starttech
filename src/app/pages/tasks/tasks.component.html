@@ -1,4 +1,16 @@
-<div class="center" style="margin-top: 1%">
+<!-- <po-button [p-label]="tituloBotao" p-danger="true" (p-click)="minhaFuncao()"></po-button> -->
+
+<!-- <po-page-dynamic-table p-title="Tarefas" p-service-api="https://po-sample-api.onrender.com/v1/people">
+</po-page-dynamic-table> -->
+
+<po-page-dynamic-table
+  p-title="Tarefas"
+  p-service-api="http://localhost:3000/tasks"
+  [p-fields]="fields"
+  [p-actions]="actions">
+</po-page-dynamic-table>
+
+<!-- <div class="center" style="margin-top: 1%">
   <button mat-stroked-button style="margin: 0 auto;" (click)="goToForm()">+ Novo</button>
 </div>
 
@@ -30,4 +42,4 @@
 }
 @else {
   SEM DADOS PARA APRESENTAR
-}
+} -->
