@@ -9,6 +9,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { TasksRoutes } from './tasks.routing';
 import { PoModule } from '@po-ui/ng-components';
 import { PoTemplatesModule } from '@po-ui/ng-templates';
+import { TasksFormComponent } from './tasks-form/tasks-form.component';
 
 @NgModule({
   imports: [
@@ -22,6 +23,6 @@ import { PoTemplatesModule } from '@po-ui/ng-templates';
     PoModule,
     PoTemplatesModule
   ],
-  declarations: [TasksComponent]
+  declarations: [TasksComponent, TasksFormComponent]
 })
 export class TasksModule { }

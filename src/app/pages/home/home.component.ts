@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { PoMenuItem } from '@po-ui/ng-components';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +8,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  mostraEvento(event: string): void {
-    console.log(event);
+  readonly menus: Array<PoMenuItem> = [
+    { label: 'Tarefas', shortLabel: 'Home',
+      icon: 'ph ph-house', action: this.goToTasks.bind(this) },
+    { label: 'Categorias', shortLabel: 'Categorias',
+      icon: 'ph ph-cards', action: this.goToCategories.bind(this) }
+  ];
+
+  constructor(
+    private router: Router
+  ) {}
+
+  goToTasks(): void {
+    this.router.navigate(['']);
+  }
+
+  goToCategories(): void {
+    this.router.navigate(['/categories']);
   }
 }

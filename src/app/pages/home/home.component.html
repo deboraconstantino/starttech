@@ -1,3 +1,11 @@
-<meu-toolbar (meuEvento)="mostraEvento($event)"></meu-toolbar>
+<div class="po-wrapper">
+  <po-toolbar p-title="Minhas tarefas"></po-toolbar>
+
+  <po-menu [p-menus]="menus" [p-collapsed]="true"></po-menu>
+
+  <router-outlet></router-outlet>
+</div>
+
+<!-- <meu-toolbar (meuEvento)="mostraEvento($event)"></meu-toolbar> -->
 <!-- <meu-toolbar (meuEvento)="mostraEvento($event)" titulo=teste></meu-toolbar> -->
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
